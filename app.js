@@ -1,16 +1,16 @@
-// JSON - JavaScript Object Notation
-// JSON é inpirado em Object Literal de javascript
-// e é similar a ele, entretando os dois não são os mesmos.
+// Funções como Objetos - em javascript funções são objetos.
+// First class functions - tudo que se pode fazer com outros types
+// você pdoe fazer com funções.
 
-var objectLiteral = {
-    firstname: 'Alexandre',
-    isAProgrammer: true
-};
-console.log(objectLiteral);
+// Function é um object especial, que se pode passar vários tipos de dados
+// como primitivos, objetos, funções.
 
-// Object para JSON
-console.log(JSON.stringify(objectLiteral));
+function greet() {
+    console.log('Oi');
+}
 
-// JSON para Object
-var jsonValue = JSON.parse('{ "firstname": "Alexandre", "isAProgrammer": true}');
-console.log(jsonValue);
+// Como function é um object, pode-se passar propriedades
+greet.language = 'portuguese';
+console.log(greet);
+console.log(greet.language);
+console.log(greet());
