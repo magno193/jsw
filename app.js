@@ -1,24 +1,20 @@
-// Objeto Literal
-var Alexandre = {
-    firsname: 'Alexandre',
-    lastname: 'Ferreira',
-    address: {
-        street: 'General Telles, 2877',
-        city: 'Botucatu',
-        state: 'SP'
+// Namespace - um container para variaveis e funções
+// javascript básico não possui namespace, entretando
+// é criado um namespace 'fake'
+var greet = 'Olá!'
+var greet = 'Hello!'
+
+console.log(greet);
+
+// É criado um objeto para se comportar como um container
+// para as variaveis e funções que serão utilizadas
+var portuguese = { 
+    greet: {
+        basic: 'Hello!'
     }
 };
+var english = {};
 
-function greet(person) {
-    console.log('Olá ' + person.firsname);
-}
+portuguese.greet = 'Olá!'
 
-greet(Alexandre);
-greet({
-    firsname: 'Mary',
-    lastname: 'Doe'
-});
-
-Alexandre.address2 = {
-    street: 'Costa Leite, 2000'
-}
+console.log(portuguese.greet.basic);
