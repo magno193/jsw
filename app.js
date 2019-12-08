@@ -1,20 +1,16 @@
-// Namespace - um container para variaveis e funções
-// javascript básico não possui namespace, entretando
-// é criado um namespace 'fake'
-var greet = 'Olá!'
-var greet = 'Hello!'
+// JSON - JavaScript Object Notation
+// JSON é inpirado em Object Literal de javascript
+// e é similar a ele, entretando os dois não são os mesmos.
 
-console.log(greet);
-
-// É criado um objeto para se comportar como um container
-// para as variaveis e funções que serão utilizadas
-var portuguese = { 
-    greet: {
-        basic: 'Hello!'
-    }
+var objectLiteral = {
+    firstname: 'Alexandre',
+    isAProgrammer: true
 };
-var english = {};
+console.log(objectLiteral);
 
-portuguese.greet = 'Olá!'
+// Object para JSON
+console.log(JSON.stringify(objectLiteral));
 
-console.log(portuguese.greet.basic);
+// JSON para Object
+var jsonValue = JSON.parse('{ "firstname": "Alexandre", "isAProgrammer": true}');
+console.log(jsonValue);
