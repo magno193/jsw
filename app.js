@@ -1,27 +1,29 @@
-// Function expression - uma unidade de código que retorna um resultado.
+// Por valor (primitivos)
+var a = 3;
+var b;
 
-// Function statement - uma unidade de código que não retorna um resultado.
+// Cria novo local na memória para b, sendo uma cópia de a
+b = a;
+a = 2
+console.log(a, b);
 
-// Statement - não retorna um objeto, alocado em memória antes do contexto
-// de execução.
-function greet() {
-    console.log('oi');
+
+// Por referência (todos os objetos (inclusive funções))
+var c = { greeting: 'hi' };
+var d;
+
+// Aponta para mesma referência
+d = c;
+c.greeting = 'hello';
+console.log(c, d);
+
+function changeGreeting(obj) {
+    obj.greeting = 'Olá'
 }
 
-// Expression - retorna o objeto anonymousGreet no contexto de execução.
-var anonymousGreet = () => {
-    console.log('oi');
-}
+changeGreeting(d);
+console.log(c, d);
 
-greet();
-anonymousGreet();
-
-// Programação funcional - passando função dentro de função
-function log(a) {
-    console.log(a)
-    a();
-}
-
-log(() => {
-    console.log('hi');
-});
+// O operador = cria novo endereço em memória
+c = { greeting: 'howdy' }
+console.log(c, d)
