@@ -1,36 +1,25 @@
-function a() {
-    console.log(this)
-}
+function greet(firstname, lastname, language, ...other) {
+    // Default values
+    firstname = firstname || '<nome>';
+    lastname = lastname || '<sobrenome>';
+    language = language || '<linguagem>';
 
-var b = function() {
-    console.log(this);
-    this.newvariable = 'olá';
-}
-
-// this aponta para o mesmo endereço
-console.log(this);
-a();
-b();
-console.log(newvariable);
-
-// Quando this é chamado por um método ele se refere ao objeto
-// no qual ele pertence.
-var c = {
-    name: 'O objeto c',
-    // Método
-    log: function() {
-        var self = this;
-
-        self.name = 'Atualizado o objeto c'
-        console.log(self);
-
-        var setname = function(newname) {
-            self.name = newname;
-        }
-
-        setname('Atualizando novamento o objeto c');
-        console.log(self);
+    if (arguments.length === 0) {
+        console.log('Faltam parâmetros!');
+        console.log('-------------------');
+        return;
     }
+
+    console.log('firstname: ' + firstname);
+    console.log('lastname: ' + lastname);
+    console.log('language: ' + language);
+    console.log('arguments: ' + arguments);
+    console.log('arguments[0]: ' + arguments[0]);
+    console.log('-------------------');
+    
 }
-console.log(c);
-c.log();
+// javascript executa mesmo sem passar parâmetros
+greet();
+greet('Alex')
+greet('Alex', 'Ferreira')
+greet('Alex', 'Ferreira', 'PT-BR')
