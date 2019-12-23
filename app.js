@@ -1,16 +1,28 @@
-// Array é uma coleção
-// Em javascript o array pode ser de vários tipos diferentes
-var arr = [
-    1,
-    false,
-    {name: 'Alexandre', address: 'General Telles'},
-    function (name) {
-        var greeting = 'Olá ';
-        console.log(greeting + name);
-    },
-    "Olá"
-];
+// Sobrecarga de funções
+// javascript não possui sobrecarga de funções 
+// porque funções são objetos
+function greet(firstname, lastname, language) {
 
-console.log(arr);
-// Invocando função dentro do array
-arr[3](arr[2].name)
+    language = language || 'pt';
+
+    if (language == 'pt') {
+        console.log('Olá ' + firstname + ' ' + lastname);
+    }
+
+    if (language == 'en') {
+        console.log('Hello ' + firstname + ' ' + lastname);
+    }
+
+}
+
+// Simplificando funções
+function greetEnglish(firstname, lastname) {
+    greet(firstname, lastname, 'en')
+}
+
+function greetPortuguese(firstname, lastname) {
+    greet(firstname, lastname, 'pt')
+}
+
+greet('Alexandre', 'Ferreira');
+greet('Alexandre', 'Ferreira', 'en');
