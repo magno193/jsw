@@ -1,28 +1,23 @@
-// Sobrecarga de funções
-// javascript não possui sobrecarga de funções 
-// porque funções são objetos
-function greet(firstname, lastname, language) {
+// Ponto e vírgulas são opcionais em javascript
+// o motor javascript coloca pontos virgulas automaticamente quando
+// acha que deve ser colocado.
 
-    language = language || 'pt';
+// Entretando não é recomendável deixar ser feito automaticamente.
 
-    if (language == 'pt') {
-        console.log('Olá ' + firstname + ' ' + lastname);
+function getPerson() {
+    // O resultado irá ser undefined pois o javascript coloca ';' apos o return
+    return
+    {
+        firstname: 'Alex'
     }
+}
 
-    if (language == 'en') {
-        console.log('Hello ' + firstname + ' ' + lastname);
+// Versão corrigida da função
+function getPerson2() {
+    return{
+        firstname: 'Alex'
     }
-
 }
 
-// Simplificando funções
-function greetEnglish(firstname, lastname) {
-    greet(firstname, lastname, 'en')
-}
-
-function greetPortuguese(firstname, lastname) {
-    greet(firstname, lastname, 'pt')
-}
-
-greet('Alexandre', 'Ferreira');
-greet('Alexandre', 'Ferreira', 'en');
+console.log(getPerson());
+console.log(getPerson2());
