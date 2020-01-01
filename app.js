@@ -1,23 +1,26 @@
-// Ponto e vírgulas são opcionais em javascript
-// o motor javascript coloca pontos virgulas automaticamente quando
-// acha que deve ser colocado.
-
-// Entretando não é recomendável deixar ser feito automaticamente.
-
-function getPerson() {
-    // O resultado irá ser undefined pois o javascript coloca ';' apos o return
-    return
-    {
-        firstname: 'Alex'
-    }
+// Function statement
+function greet(name) {
+    console.log('Olá ' + name);
 }
+greet('John');
 
-// Versão corrigida da função
-function getPerson2() {
-    return{
-        firstname: 'Alex'
-    }
+// Function expression
+var greetFunc = function (name) {
+    console.log('Olá ' + name);
 }
+greetFunc('John');
 
-console.log(getPerson());
-console.log(getPerson2());
+// Immediately Invoked Function Expression (IIFE)
+var greeting = function (name) {
+    return 'Olá ' + name;
+}('John');
+console.log(greeting);
+
+
+
+var firstname = 'John';
+
+(function(name){
+    var greeting = 'Insde IIFE: Olá';
+    console.log(greeting + ' ' + name)
+}(firstname)); // IIFE
