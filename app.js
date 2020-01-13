@@ -1,26 +1,15 @@
-// Function statement
-function greet(name) {
-    console.log('Olá ' + name);
+function greet(whattosay) {
+    
+    return function (name) {
+        console.log(whattosay + ' ' + name);
+    }
+
 }
-greet('John');
 
-// Function expression
-var greetFunc = function (name) {
-    console.log('Olá ' + name);
-}
-greetFunc('John');
+// Invocando uma função dentro de uma função
+greet('Hi')('Tony');
 
-// Immediately Invoked Function Expression (IIFE)
-var greeting = function (name) {
-    return 'Olá ' + name;
-}('John');
-console.log(greeting);
-
-
-
-var firstname = 'John';
-
-(function(name){
-    var greeting = 'Insde IIFE: Olá';
-    console.log(greeting + ' ' + name)
-}(firstname)); // IIFE
+// Armazenando a função invocada
+var sayHi = greet('Hi');
+// Closure - pega a variavel da função fechada anterior como escopo global
+sayHi('Tony');
